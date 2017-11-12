@@ -2,6 +2,7 @@ package com.example.lenovo.uibestpractice;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ public class FirstActivity extends AppCompatActivity {
         inputText=(EditText) findViewById(R.id.input_text);
         send=(Button)findViewById(R.id.button_send);
         msgRecyclerView=(RecyclerView)findViewById(R.id.recycler_view);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        msgRecyclerView.setLayoutManager(layoutManager);
         adapter=new MsgAdapter(msgList);
         msgRecyclerView.setAdapter(adapter);
         send.setOnClickListener(new View.OnClickListener(){
